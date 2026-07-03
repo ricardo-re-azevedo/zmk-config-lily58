@@ -1,0 +1,6 @@
+include:
+  # Config settings for the dongle
+  # Whatever your keyboard uses...
+  -
+  - board: nice_nano//zmk
+    shield: lotus58_dongleless_left nice_view
