@@ -27,13 +27,11 @@ Commands for zmk 0.3:
 ```shell
 cd app 
 
-# Build dongle
-west build -p -b raytac_mdbt50q_rx -- -DSHIELD="settings_reset" -DZMK_CONFIG=/workspaces/zmk-config/
-west build -p -b raytac_mdbt50q_rx -- -DSHIELD="lily58_dongle" -DZMK_CONFIG=/workspaces/zmk-config/
-# Build dongle with debugging
-west build -p -b raytac_mdbt50q_rx -S zmk-usb-logging -- -DSHIELD="lily58_dongle" -DZMK_CONFIG=/workspaces/zmk-config/ -DCONFIG_ZMK_USB_LOGGING=y
+# Build dongle- working in zmk 0.3
+west build -p -b seeeduino_xiao_ble -- -DSHIELD="settings_reset" -DZMK_CONFIG=/workspaces/zmk-config/
+west build -p -b seeeduino_xiao_ble -- -DSHIELD="lily58_dongle" -DZMK_CONFIG=/workspaces/zmk-config/
 
-# build sides
+# build sides- working in zmk 0.3
 west build -p -b nice_nano_v2 -- -DSHIELD="settings_reset" -DZMK_CONFIG=/workspaces/zmk-config/
 west build -p -b nice_nano_v2 -- -DSHIELD="lily58_left nice_view_adapter nice_view" -DZMK_CONFIG=/workspaces/zmk-config/ -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 west build -p -b nice_nano_v2 -- -DSHIELD="lily58_right nice_view_adapter nice_view" -DZMK_CONFIG=/workspaces/zmk-config/ -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
